@@ -21,3 +21,5 @@ aegir:
     modules: {}
     patches: {}
 
+  provision:
+    drush_version: stable

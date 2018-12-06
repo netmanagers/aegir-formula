@@ -11,6 +11,9 @@ aegir_hostmaster_debconf:
         'aegir/db_password': {'type': 'string', 'value': '{{ aegir.hostmaster.db_password }}'}
         'aegir/email': {'type': 'string', 'value': '{{ aegir.hostmaster.email }}'}
         'aegir/webserver': {'type': 'string', 'value': '{{ aegir.hostmaster.webserver }}'}
+    - name: aegir3-provision
+    - data:
+        'aegir/drush_version': {'type': 'string', 'value': '{{ aegir.provision.drush_version }}'}
 
 aegir:
   pkg.installed:

@@ -34,7 +34,7 @@ aegir:
       hosting_external:
         url: https://git.drupal.org/sandbox/mpv/2984207.git
         branch: 7.x-3.x
-        target: /var/aegir/hostmaster-7.x-3.151/sites/all/modules/hosting_external
+        target: /var/aegir/hostmaster-7.x-3.161/sites/all/modules/hosting_external
       provision_extra_sync:
         url: https://git.drupal.org/sandbox/mpv/2985693.git
         branch: 7.x-3.x
@@ -47,16 +47,6 @@ aegir:
       hosting_http_basic_auth: {}
       hosting_https: {}
     patches:
-      letsencrypt_context:
-        path: /var/aegir/hostmaster-7.x-3.151/profiles/hostmaster/modules/aegir/hosting_https
-        source: https://www.drupal.org/files/issues/2018-07-31/wrong_letsencrypt_context_properties-2988639-4.patch
-        args: '-p1'
-        verification: test $(sha256sum /var/aegir/hostmaster-7.x-3.151/profiles/hostmaster/modules/aegir/hosting_https/submodules/letsencrypt/drush/Provision/Service/Certificate/LetsEncrypt.php |cut -f 1 -d ' ' ) = '21faeacdc0d84c011d7d77a4730ffd6f48f49a27695de784e98640f81e654e97'
-      letsencrypt_permissions:
-        path: /var/aegir/hostmaster-7.x-3.151/profiles/hostmaster/modules/aegir/hosting_https
-        source: https://www.drupal.org/files/issues/2018-03-24/2952573-hook-permissions_2.patch
-        args: '-p1'
-        verification: test $(sha256sum /var/aegir/hostmaster-7.x-3.151/profiles/hostmaster/modules/aegir/hosting_https/submodules/letsencrypt/drush/Provision/Service/Certificate/LetsEncrypt.php |cut -f 1 -d ' ' ) = '21faeacdc0d84c011d7d77a4730ffd6f48f49a27695de784e98640f81e654e97'
       provision_drupal_settings_6:
         path: /usr/share/drush/commands/provision
         source: https://cgit.drupalcode.org/provision/patch/?id=7bf972c539d1ccbec79e8faa727a123553ad7cd8

@@ -52,7 +52,8 @@ provisioner:
 verifier:
   name: inspec
   sudo: true
-  reporter: cli
+  reporter:
+    - cli
   inspec_tests:
     - path: test/integration/default
 
